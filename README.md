@@ -4,7 +4,7 @@ A full-stack food ordering web application — browse restaurants, filter and se
 
 This project began as a course exercise (a Swiggy-clone frontend built while learning React) and was rebuilt into a production-style application: a real Express + SQLite backend replacing an unofficial third-party API dependency, a redesigned interface with a distinct visual identity, proper validation and error handling throughout, and a project structure organized the way a real full-stack app is organized.
 
-> **Live demo:** _add your deployed link here once hosted (e.g. Vercel + Render)_
+> **Live demo:** [https://zestly-food-ordering-app-2awj.vercel.app/]
 
 ---
 
@@ -100,7 +100,7 @@ zestly/
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/vasavi67/zestly.git
+git clone https://github.com/vasavi67/Zestly--Food-Ordering-App
 cd zestly
 
 # 2. Install dependencies for both apps
