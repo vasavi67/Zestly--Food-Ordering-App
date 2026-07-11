@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for Zestly.
+  Palette: warm paper background + burnt-tandoori orange accent + curry-leaf
+  green for positive/rating signals. Chosen deliberately to sit in food's own
+  visual world rather than a generic tech palette.
+*/
+@theme {
+  --color-ink: #1b1b1f;
+  --color-paper: #fff8f0;
+  --color-paper-warm: #fcede1;
+  --color-tandoori: #e85d2c;
+  --color-tandoori-dark: #c94a1e;
+  --color-curry: #1f6e4e;
+  --color-curry-light: #e3f3ea;
+  --color-line: #ead9c9;
+  --color-muted: #8a7d6f;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Visible focus ring for keyboard users everywhere, not just default outline */
+:focus-visible {
+  outline: 2px solid var(--color-tandoori);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+::selection {
+  background-color: var(--color-tandoori);
+  color: white;
+}
+
+/* Ticket-style dashed divider used on menu cards to echo a printed receipt */
+.ticket-divider {
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-line) 0,
+    var(--color-line) 6px,
+    transparent 6px,
+    transparent 12px
+  );
+  height: 1px;
+}
+
+/* Skeleton shimmer for loading states */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #f1e6da 25%, #fbf1e6 37%, #f1e6da 63%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
